@@ -1,0 +1,7 @@
+{
+  "modules": [
+    "ping",
+    "teach"
+  ],
+  "token": ""
+}
