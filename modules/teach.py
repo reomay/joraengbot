@@ -15,10 +15,12 @@ class teach(commands.Cog):
         try:
             list = json_handler.Read("answers.json")[word]
             list.append(answer)
+            json_handler.Update("answers.json", {word: list})
         except:
             json_handler.Update("answers.json", {
                 word: [answer]
             })
+        await interaction.response.send_message(content=f"`{word}`라고 말하면 `{answer}`라고 대답하게 학습했습니다.")
 
 
 async def setup(bot: commands.Bot) -> None:
